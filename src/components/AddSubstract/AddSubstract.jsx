@@ -3,17 +3,6 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import "./addSubstract.css";
 
-function getStyleVariantModifier(variant) {
-  if (variant === "primary") return "btn--primary";
-  if (variant === "secondary") return "btn--secondary";
-  return "";
-}
-function getStyleSizeModifier(size) {
-  if (size === "large") return "btn--large";
-  if (size === "normal") return "btn--normal";
-  return "";
-}
-
 const AddSubstract = ({
   initialCount,
   limitCount,
