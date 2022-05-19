@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> Should change the state of a button to disabled: Check disabled status 1`] = `
+<button
+  class=" Button btn--secondary "
+  disabled=""
+>
+  Something
+</button>
+`;

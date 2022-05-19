@@ -16,3 +16,7 @@
 .Button.btn-normal {
   width: auto;
 }
+
+.Button:disabled {
+  background-color: rgb(62, 71, 71);
+}
