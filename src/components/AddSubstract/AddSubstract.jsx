@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Button from "../Button/Button";
 import "./addSubstract.css";
 
 function getStyleVariantModifier(variant) {
@@ -50,33 +51,17 @@ const AddSubstract = ({
     <div className="container">
       <div className="row">
         <div className="col-sm">
-          <button
-            className={[
-              className,
-              "Button",
-              getStyleVariantModifier(variant),
-              getStyleSizeModifier(size),
-            ].join(" ")}
-            onClick={() => handleSubstract()}
-          >
-            <p className="control">-</p>
-          </button>
+          <Button
+            variant={"secondary"}
+            children={"-"}
+            onClick={handleSubstract}
+          />
         </div>
         <div className="col-sm">
           <p>{counter}</p>
         </div>
         <div className="col-sm">
-          <button
-            className={[
-              className,
-              "Button",
-              getStyleVariantModifier(variant),
-              getStyleSizeModifier(size),
-            ].join(" ")}
-            onClick={() => handleAdd()}
-          >
-            <p className="control">+</p>
-          </button>
+          <Button variant={"secondary"} children={"+"} onClick={handleAdd} />
         </div>
       </div>
     </div>
