@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rating/> Should render three stars yellow follwed by two blanks: Check rendered yellow stars to be the first three 1`] = `
+<div
+  data-testid="star-rating"
+>
+  <span
+    class="star on"
+  />
+  <span
+    class="star on"
+  />
+  <span
+    class="star on"
+  />
+  <span
+    class="star"
+  />
+  <span
+    class="star"
+  />
+</div>
+`;
+
+exports[`<Rating/> Should render two and a half stars yellow follwed by two and a half blanks: Check rendered yellow stars to be the first two and a half 1`] = `
+<div
+  data-testid="star-rating"
+>
+  <span
+    class="star on"
+  />
+  <span
+    class="star on"
+  />
+  <span
+    class="star half"
+  />
+  <span
+    class="star"
+  />
+  <span
+    class="star"
+  />
+</div>
+`;
+
+exports[`<Rating/> Should render two stars yellow follwed by three blanks: Check rendered yellow stars to be the first two 1`] = `
+<div
+  data-testid="star-rating"
+>
+  <span
+    class="star on"
+  />
+  <span
+    class="star on"
+  />
+  <span
+    class="star"
+  />
+  <span
+    class="star"
+  />
+  <span
+    class="star"
+  />
+</div>
+`;
