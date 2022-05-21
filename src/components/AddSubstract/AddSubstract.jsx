@@ -17,10 +17,7 @@ const AddSubstract = ({
 
   const handleAdd = () => {
     setCounter((prev) => {
-      let newCount = limitCount;
-      if (prev < limitCount) {
-        newCount = prev + 1;
-      }
+      const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
       return newCount;
     });
@@ -28,14 +25,12 @@ const AddSubstract = ({
 
   const handleSubstract = () => {
     setCounter((prev) => {
-      let newCount = 0;
-      if (prev > 0) {
-        newCount = prev - 1;
-      }
+      const newCount = prev === 0 ? 0 : prev - 1;
       onSubstract(newCount);
       return newCount;
     });
   };
+
   return (
     <div className="container">
       <div className="row">
@@ -44,13 +39,19 @@ const AddSubstract = ({
             variant={"secondary"}
             children={"-"}
             onClick={handleSubstract}
+            disabled={counter === 0 ? true : false}
           />
         </div>
         <div className="col-sm">
           <p>{counter}</p>
         </div>
         <div className="col-sm">
-          <Button variant={"secondary"} children={"+"} onClick={handleAdd} />
+          <Button
+            variant={"secondary"}
+            children={"+"}
+            onClick={handleAdd}
+            disabled={counter === limitCount ? true : false}
+          />
         </div>
       </div>
     </div>
@@ -60,6 +61,8 @@ const AddSubstract = ({
 AddSubstract.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(["large", "normal"]),
+  limitCount: PropTypes.number,
+  initialCount: PropTypes.number,
   variant: PropTypes.oneOf(["primary", "secondary"]).isRequired,
   onAdd: PropTypes.func.isRequired,
   onSubstract: PropTypes.func.isRequired,
