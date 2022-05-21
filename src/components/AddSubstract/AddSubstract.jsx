@@ -43,7 +43,6 @@ const AddSubstract = ({
           <Button
             variant={"secondary"}
             children={"-"}
-            id={"substract"}
             onClick={handleSubstract}
           />
         </div>
@@ -51,12 +50,7 @@ const AddSubstract = ({
           <p>{counter}</p>
         </div>
         <div className="col-sm">
-          <Button
-            variant={"secondary"}
-            children={"+"}
-            onClick={handleAdd}
-            id={"increment"}
-          />
+          <Button variant={"secondary"} children={"+"} onClick={handleAdd} />
         </div>
       </div>
     </div>
