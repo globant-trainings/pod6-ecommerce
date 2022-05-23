@@ -25,7 +25,7 @@ const Carousel = ({ imageData }) => {
         disabled={currentImage === 0 ? true : false}
       />
       {imageData.map((image, index) => (
-        <div>
+        <div className="carousel__div">
           {index === currentImage && (
             <img
               className="carousel__image"

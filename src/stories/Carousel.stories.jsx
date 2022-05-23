@@ -1,6 +1,7 @@
 import React from "react";
 
 import Carousel from "../components/Carousel/Carousel";
+import coffee from "../assets/coffee.png";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -10,20 +11,13 @@ export default {
 
 const ImageData = [
   {
-    image:
-      "https://images.unsplash.com/photo-1546190255-451a91afc548?ixlib=rb-1.2.1",
+    image: coffee,
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1591348122449-02525d70379b?ixlib=rb-1.2.1",
+    image: coffee,
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?ixlib=rb-1.2.1",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?ixlib=rb-1.2.1",
+    image: coffee,
   },
 ];
 
