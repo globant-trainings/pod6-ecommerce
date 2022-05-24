@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterSortby/> Should render three options in a select: Check rendered select to represent all options 1`] = `
+<select
+  data-testid="options-select"
+>
+  <option
+    data-testid="options-select-1"
+    value="Relevant"
+  >
+    Relevant
+  </option>
+  <option
+    data-testid="options-select-2"
+    value="Price"
+  >
+    Price
+  </option>
+  <option
+    data-testid="options-select-3"
+    value="Rating"
+  >
+    Rating
+  </option>
+</select>
+`;
