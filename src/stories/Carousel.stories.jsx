@@ -1,9 +1,8 @@
 import React from "react";
 
 import Carousel from "../components/Carousel/Carousel";
-import coffee from "../assets/coffee.png";
+import api from "../utils/constants";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Example/Carousel",
   component: Carousel,
@@ -11,21 +10,19 @@ export default {
 
 const ImageData = [
   {
-    image: coffee,
+    image: api + "200/300",
   },
   {
-    image: coffee,
+    image: api + "200/300?v=1",
   },
   {
-    image: coffee,
+    image: api + "200/300?v=2",
   },
 ];
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Carousel {...args} />;
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   imageData: ImageData,
 };
