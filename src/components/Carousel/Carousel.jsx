@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
+import { defaultImage } from "../../utils/constants";
 import "./carousel.css";
 
 const Carousel = ({ imageData }) => {
@@ -24,24 +25,37 @@ const Carousel = ({ imageData }) => {
         onClick={() => goBack()}
         disabled={currentImage === 0 ? true : false}
       />
-      {imageData.map((image, index) => (
+      {imageData.length > 0 ? (
+        imageData.map((image, index) => (
+          <div className="carousel__div">
+            {index === currentImage && (
+              <img
+                className="carousel__image"
+                src={image.image}
+                alt={image.image}
+              />
+            )}
+          </div>
+        ))
+      ) : (
         <div className="carousel__div">
-          {index === currentImage && (
-            <img
-              className="carousel__image"
-              src={image.image}
-              alt={image.image}
-              lazyLoad
-            />
-          )}
+          <img
+            className="carousel__image"
+            src={defaultImage}
+            alt={"default__image"}
+          />
         </div>
-      ))}
+      )}
       <Button
         variant={"primary"}
         className="carousel__rightButton"
         children={">"}
         onClick={() => goForward()}
-        disabled={currentImage === imageData.length - 1 ? true : false}
+        disabled={
+          currentImage === imageData.length - 1 || imageData.length === 0
+            ? true
+            : false
+        }
       />
     </div>
   );
