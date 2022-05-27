@@ -6,7 +6,7 @@ const BasicsFilter = ({setBasicsOn}) => {
       <p>Filters:</p>
       <div className='basicsFilterCheckbox'>
         <input type="checkbox" onChange={(e) => setBasicsOn(e.target.checked)}/>
-        <p>Basiscs</p>
+        <p>Basics</p>
       </div>
     </div>
   )

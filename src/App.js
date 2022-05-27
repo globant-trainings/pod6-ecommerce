@@ -1,14 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import BasicsFilter from './components/Filters/BasicsFilter';
-export const setBasicsOn = (isBasicFilterOn) => {
-  if(isBasicFilterOn){
-    console.log('Basics filter enabled')
-  } else{
-    console.log('Basics filter disabled')
 
-  }
-}
 function App() {
   
   return (
@@ -26,7 +18,6 @@ function App() {
         >
           Learn React
         </a>
-        <BasicsFilter setBasicsOn={setBasicsOn}/>
       </header>
     </div>
   );

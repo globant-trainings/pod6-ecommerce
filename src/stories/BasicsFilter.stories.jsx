@@ -1,6 +1,13 @@
 import React from 'react';
 import BasicsFilter from '../components/Filters/BasicsFilter'
-import { setBasicsOn } from '../App'
+const setBasicsOn = (isBasicFilterOn) => {
+  if(isBasicFilterOn){
+    console.log('Basics filter enabled')
+  } else{
+    console.log('Basics filter disabled')
+
+  }
+}
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Basics filter component',
