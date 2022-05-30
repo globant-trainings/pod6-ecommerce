@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
+import CartContext from "../../store/cart/CartContext";
+import { useContext } from "react";
 import "./addSubstract.css";
 
 const AddSubstract = ({
@@ -11,14 +13,19 @@ const AddSubstract = ({
   className,
   onAdd,
   onSubstract,
+  product,
   ...props
 }) => {
   const [counter, setCounter] = useState(initialCount);
+  const { addToCart, cartItems } = useContext(CartContext);
+
+  console.log(product);
 
   const handleAdd = () => {
     setCounter((prev) => {
       const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
+      addToCart(product);
       return newCount;
     });
   };
@@ -54,6 +61,7 @@ const AddSubstract = ({
           />
         </div>
       </div>
+      <p>Cart Items: {cartItems.length}</p>
     </div>
   );
 };
