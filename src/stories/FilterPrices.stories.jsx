@@ -11,8 +11,8 @@ export default {
 
 const Template = (args) => <FilterPrices {...args} />;
 
-const handleChange = () => {
-    console.log(onChange);
+const handleChange = (x) => {
+    console.log(x);
 }
 
 export const DesignExample = Template.bind({});
