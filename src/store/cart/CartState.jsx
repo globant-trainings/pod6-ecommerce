@@ -6,6 +6,7 @@ import CartReducer from "./CartReducer";
 const CartState = ({ children }) => {
   const initialState = {
     cartItems: [],
+    modal: true,
     checkout: false,
   };
 
@@ -13,6 +14,10 @@ const CartState = ({ children }) => {
 
   const addToCart = (payload) => {
     dispatch({ type: "ADD_TO_CART", payload });
+  };
+
+  const modalVisibility = (payload) => {
+    dispatch({ type: "MODAL_VISIBILITY", payload });
   };
 
   const increase = (payload) => {
@@ -43,6 +48,7 @@ const CartState = ({ children }) => {
         addToCart,
         removeFromCart,
         increase,
+        modalVisibility,
         decrease,
         handleCheckout,
         clearCart,

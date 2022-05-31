@@ -4,6 +4,7 @@ import {
   INCREASE,
   DECREASE,
   CHECKOUT,
+  MODAL_VISIBILITY,
   CLEAR,
 } from "./CartTypes.js";
 
@@ -72,6 +73,10 @@ const CartReducer = (state, action) => {
       return {
         cartItems: [],
         ...sumItems([]),
+      };
+    case MODAL_VISIBILITY:
+      return {
+        modal: action.payload,
       };
     default:
       return state;

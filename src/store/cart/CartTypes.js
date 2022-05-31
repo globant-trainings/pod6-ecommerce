@@ -4,3 +4,4 @@ export const INCREASE = "INCREASE";
 export const DECREASE = "DECREASE";
 export const CHECKOUT = "CHECKOUT";
 export const CLEAR = "CLEAR";
+export const MODAL_VISIBILITY = "MODAL_VISIBILITY";
