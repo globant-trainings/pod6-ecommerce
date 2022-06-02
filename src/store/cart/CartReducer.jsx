@@ -76,6 +76,7 @@ const CartReducer = (state, action) => {
       };
     case MODAL_VISIBILITY:
       return {
+        ...state,
         modal: action.payload,
       };
     default:
