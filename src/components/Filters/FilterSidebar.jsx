@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FilterPrices from '../FilterPrices/FilterPrices';
-import FilterSortby from '../FilterSortby/FilterSortby';
+import FilterPrices from './FilterPrices';
+import FilterSortby from './FilterSortby';
 import './filtersidebar.css';
 
 const FilterSidebar = ({

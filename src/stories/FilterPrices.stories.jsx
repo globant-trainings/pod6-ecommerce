@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import React from 'react';
 
-import FilterPrices from '../components/FilterPrices/FilterPrices';
+import FilterPrices from '../components/Filters/FilterPrices';
 
 export default {
   title: 'Component/FilterPrices',

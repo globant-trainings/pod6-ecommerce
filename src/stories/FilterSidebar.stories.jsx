@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import React from 'react';
 
-import FilterSidebar from '../components/FilterSidebar/FilterSidebar';
+import FilterSidebar from '../components/Filters/FilterSidebar';
 
 export default {
   title: 'Component/FilterSidebar',
