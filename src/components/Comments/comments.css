@@ -1,0 +1,18 @@
+.commentsContainer {
+    display: flex;
+    align-items: center;
+
+}
+
+.commentsContainer>p {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #0F1111;
+    margin: 0;
+}
+
+.commentsContainer>img {
+    height: 10px;
+    width: 12px;
+}
