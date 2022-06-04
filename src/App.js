@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Pagination from './components/Pagination/Pagination';
 function App() {
-  
   return (
     <div className="App">
       <header className="App-header">
@@ -15,8 +13,8 @@ function App() {
         >
           Learn React
         </a>
-        <Pagination getItems={() => console.log('refetched')}/>
       </header>
+      
     </div>
   );
 }
