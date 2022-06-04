@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Pagination from './components/Pagination/Pagination';
 function App() {
   
   return (
@@ -15,6 +15,7 @@ function App() {
         >
           Learn React
         </a>
+        <Pagination getItems={() => console.log('refetched')}/>
       </header>
     </div>
   );
