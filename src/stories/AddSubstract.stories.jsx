@@ -28,6 +28,7 @@ const product = {
   id: 1,
   name: "Coffee Machine 1",
   price: 919.11,
+  quantity: 1,
   image: "/assets/img/1.png",
 };
 

@@ -17,15 +17,24 @@ const AddSubstract = ({
   ...props
 }) => {
   const [counter, setCounter] = useState(initialCount);
-  const { addToCart, cartItems } = useContext(CartContext);
-
-  console.log(product);
+  const {
+    addToCart,
+    increase,
+    cartItems,
+    itemCount,
+    decrease,
+    removeFromCart,
+  } = useContext(CartContext);
 
   const handleAdd = () => {
     setCounter((prev) => {
       const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
-      addToCart(product);
+      if (cartItems.length > 0) {
+        increase(product);
+      } else {
+        addToCart(product);
+      }
       return newCount;
     });
   };
@@ -34,6 +43,14 @@ const AddSubstract = ({
     setCounter((prev) => {
       const newCount = prev === 0 ? 0 : prev - 1;
       onSubstract(newCount);
+      if (
+        cartItems[cartItems.findIndex((item) => item.id === product.id)]
+          .quantity === 1
+      ) {
+        removeFromCart(product);
+      } else {
+        decrease(product);
+      }
       return newCount;
     });
   };
@@ -61,7 +78,7 @@ const AddSubstract = ({
           />
         </div>
       </div>
-      <p>Cart Items: {cartItems.length}</p>
+      <p>Cart Items: {itemCount}</p>
     </div>
   );
 };

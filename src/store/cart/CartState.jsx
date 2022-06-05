@@ -1,11 +1,17 @@
 import { useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
-//import { sumItems } from "./CartReducer";
+import { sumItems } from "./CartReducer";
+
+//Local Storage
+const storage = localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
 
 const CartState = ({ children }) => {
   const initialState = {
-    cartItems: [],
+    cartItems: storage,
+    ...sumItems(storage),
     modal: true,
     checkout: false,
   };
@@ -21,6 +27,7 @@ const CartState = ({ children }) => {
   };
 
   const increase = (payload) => {
+    console.log("increase");
     dispatch({ type: "INCREASE", payload });
   };
 

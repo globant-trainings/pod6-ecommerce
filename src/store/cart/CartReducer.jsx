@@ -8,8 +8,15 @@ import {
   CLEAR,
 } from "./CartTypes.js";
 
+const Storage = (cartItems) => {
+  localStorage.setItem(
+    "cartItems",
+    JSON.stringify(cartItems.length > 0 ? cartItems : [])
+  );
+};
+
 export const sumItems = (cartItems) => {
-  //storage(cartItems);
+  Storage(cartItems);
   let itemCount = cartItems.reduce(
     (total, product) => total + product.quantity,
     0
@@ -23,13 +30,12 @@ export const sumItems = (cartItems) => {
 const CartReducer = (state, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      //if (!state.cartItems.find((item) => item.id === action.payload.id)) {
-      state.cartItems.push({
-        ...action.payload,
-        quantity: 1,
-      });
-      // }
-
+      if (!state.cartItems.find((item) => item.id === action.payload.id)) {
+        state.cartItems.push({
+          ...action.payload,
+          quantity: 1,
+        });
+      }
       return {
         ...state,
         ...sumItems(state.cartItems),
@@ -49,6 +55,7 @@ const CartReducer = (state, action) => {
       state.cartItems[
         state.cartItems.findIndex((item) => item.id === action.payload.id)
       ].quantity++;
+      console.log(state);
       return {
         ...state,
         ...sumItems(state.cartItems),
@@ -58,6 +65,7 @@ const CartReducer = (state, action) => {
       state.cartItems[
         state.cartItems.findIndex((item) => item.id === action.payload.id)
       ].quantity--;
+      console.log(state);
       return {
         ...state,
         ...sumItems(state.cartItems),
