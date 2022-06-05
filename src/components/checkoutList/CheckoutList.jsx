@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./checkoutList.css";
 import trash from "../../assets/trash.jpg";
-//import CartContext from "../../store/cart/CartContext";
-//import { useContext } from "react";
+import CartContext from "../../store/cart/CartContext";
+import { useContext } from "react";
 
-const CheckoutList = ({ products }) => {
-  //const { removeFromCart } = useContext(CartContext);
-  const [cartItems, setCartItems] = useState(products);
+const CheckoutList = () => {
+  const { removeFromCart, cartItems } = useContext(CartContext);
   const remove = (product) => {
-    //removeFromCart(product);
-    setCartItems(cartItems.filter((item) => item.id !== product.id));
+    removeFromCart(product);
   };
 
   return (

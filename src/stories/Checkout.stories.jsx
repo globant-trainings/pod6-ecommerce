@@ -1,16 +1,16 @@
 import React from "react";
 
-import CheckoutList from "../components/checkoutList/CheckoutList";
+import Checkout from "../components/Checkout/Checkout";
 import CartState from "../store/cart/CartState";
 
 export default {
-  title: "Example/CheckoutList",
-  component: CheckoutList,
+  title: "Example/Checkout",
+  component: Checkout,
 };
 
 const Template = (args) => (
   <CartState>
-    <CheckoutList {...args} />
+    <Checkout {...args} />
   </CartState>
 );
 
