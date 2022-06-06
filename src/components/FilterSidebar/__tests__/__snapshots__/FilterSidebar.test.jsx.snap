@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterSidebar/> Should render sidebar like design: Check rendered sidebar to be like design 1`] = `
+<div
+  data-testid="filters-sidebar"
+>
+  <table
+    data-testid="prices-radio"
+  >
+    <tbody>
+      <tr
+        class="radio-option"
+      >
+        <td>
+          <input
+            data-testid="prices-radio-1"
+            name="prices"
+            type="radio"
+            value="$1 - $50"
+          />
+          $1 - $50
+        </td>
+      </tr>
+      <tr
+        class="radio-option"
+      >
+        <td>
+          <input
+            data-testid="prices-radio-2"
+            name="prices"
+            type="radio"
+            value="$51 - $100"
+          />
+          $51 - $100
+        </td>
+      </tr>
+      <tr
+        class="radio-option"
+      >
+        <td>
+          <input
+            data-testid="prices-radio-3"
+            name="prices"
+            type="radio"
+            value="$101 - $200"
+          />
+          $101 - $200
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <select
+    data-testid="options-select"
+  >
+    <option
+      data-testid="options-select-1"
+      value="Relevant"
+    >
+      Relevant
+    </option>
+    <option
+      data-testid="options-select-2"
+      value="Price"
+    >
+      Price
+    </option>
+    <option
+      data-testid="options-select-3"
+      value="Rating"
+    >
+      Rating
+    </option>
+  </select>
+</div>
+`;
