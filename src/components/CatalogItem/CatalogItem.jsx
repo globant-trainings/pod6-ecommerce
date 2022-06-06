@@ -9,6 +9,7 @@ import Rating from '../Rating/Rating';
 import './catalogitem.css';
 
 const CatalogItem = ({
+    product,
     pictures,
     title,
     comments,
@@ -34,13 +35,14 @@ const CatalogItem = ({
             <Button variant={'primary'} size={'large'} children={'See details'}></Button>
             </div>
             <div className='button-wrapper'>
-            <AddSubstract initialCount={initialItems} limitCount={10} onAdd={handleOnAdd} onSubstract={handleOnSubstract}></AddSubstract>
+            <AddSubstract product={product} initialCount={initialItems} limitCount={10} onAdd={handleOnAdd} onSubstract={handleOnSubstract}></AddSubstract>
             </div>
         </div>
     );
 }
 
 CatalogItem.propTypes = {
+    product: PropTypes.object,
     pictures: PropTypes.array,
     title: PropTypes.string,
     comments: PropTypes.number,

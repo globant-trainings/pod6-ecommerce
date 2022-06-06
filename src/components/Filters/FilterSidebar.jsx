@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FilterPrices from './FilterPrices';
 import FilterSortby from './FilterSortby';
+import BasicsFilter from './BasicsFilter';
 import './filtersidebar.css';
 
 const FilterSidebar = ({
     prices,
     options,
+    onChangeBasics,
     onChangePrice,
     onChangeSort
 }) => {
@@ -16,8 +18,12 @@ const FilterSidebar = ({
     const handleSortChange = (e) => {
         onChangeSort(e);
     }
+    const handleBasics = (e) => {
+        onChangeBasics(e);
+    }
     return (
         <div data-testid="filters-sidebar">
+            <BasicsFilter setBasicsOn={handleBasics}/>
             <FilterPrices prices={prices} onChange={handlePriceChange} />
             <FilterSortby options={options} onChange={handleSortChange} />
         </div>

@@ -19,10 +19,15 @@ const handleSortChange = (x) => {
     console.log(x);
 }
 
+const setBasicsOn = (isBasicFilterOn) => {
+  console.log(isBasicFilterOn);
+}
+
 export const DesignExample = Template.bind({});
 DesignExample.args = {
   prices: ["$1 - $50", "$51 - $100", "$101 - $200"],
   options: ["Relevant", "Price", "Rating"],
+  onChangeBasics: action("Basics is", setBasicsOn),
   onChangePrice: action("onChangePrice", handlePriceChange),
   onChangeSort: action("onChangeSort", handleSortChange)
 };
@@ -31,6 +36,7 @@ export const SingleOption = Template.bind({});
 SingleOption.args = {
   prices: ["$1 - $50"],
   options: ["Relevant"],
+  onChangeBasics: action("Basics is", setBasicsOn),
   onChangePrice: action("onChangePrice", handlePriceChange),
   onChangeSort: action("onChangeSort", handleSortChange)
 };
