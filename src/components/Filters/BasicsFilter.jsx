@@ -1,5 +1,6 @@
 import React from 'react'
 import './BasicsFilter.css'
+
 const BasicsFilter = ({ setBasicsOn }) => {
     return (
         <div className='basicsFilterContainer'>

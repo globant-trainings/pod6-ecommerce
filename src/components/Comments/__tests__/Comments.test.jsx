@@ -20,5 +20,4 @@ describe('<Comments/>', () => {
 
         expect(comments).toMatchSnapshot();
     });
-
 });

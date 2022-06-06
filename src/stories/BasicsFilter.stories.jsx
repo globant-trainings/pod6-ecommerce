@@ -15,7 +15,6 @@ const Template = (args) => <BasicsFilter {...args} />;
 const setBasicsOn = (isBasicFilterOn) => {
     console.log(isBasicFilterOn);
 }
-
 export const CommentsComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 

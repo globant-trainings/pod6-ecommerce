@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterPrices/> Should render three options like design: Check rendered options to be like design 1`] = `
+<table
+  data-testid="prices-radio"
+>
+  <tbody>
+    <tr
+      class="radio-option"
+    >
+      <td>
+        <input
+          data-testid="prices-radio-1"
+          name="prices"
+          type="radio"
+          value="$1 - $50"
+        />
+        $1 - $50
+      </td>
+    </tr>
+    <tr
+      class="radio-option"
+    >
+      <td>
+        <input
+          data-testid="prices-radio-2"
+          name="prices"
+          type="radio"
+          value="$51 - $100"
+        />
+        $51 - $100
+      </td>
+    </tr>
+    <tr
+      class="radio-option"
+    >
+      <td>
+        <input
+          data-testid="prices-radio-3"
+          name="prices"
+          type="radio"
+          value="$101 - $200"
+        />
+        $101 - $200
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

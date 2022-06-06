@@ -8,6 +8,7 @@ const Comments = ({ numberOfComments = 0 }) => {
             <img src={CommentsIMG} alt="Comments" />
         </div>
     )
+
 }
 
 export default Comments

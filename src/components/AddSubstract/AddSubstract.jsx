@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
+import CartContext from "../../store/cart/CartContext";
+import { useContext } from "react";
 import "./addSubstract.css";
 
 const AddSubstract = ({
@@ -11,14 +13,28 @@ const AddSubstract = ({
   className,
   onAdd,
   onSubstract,
+  product,
   ...props
 }) => {
   const [counter, setCounter] = useState(initialCount);
+  const {
+    addToCart,
+    increase,
+    cartItems,
+    itemCount,
+    decrease,
+    removeFromCart,
+  } = useContext(CartContext);
 
   const handleAdd = () => {
     setCounter((prev) => {
       const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
+      if (cartItems.find((item) => item.id === product.id)) {
+        increase(product);
+      } else {
+        addToCart(product);
+      }
       return newCount;
     });
   };
@@ -27,6 +43,14 @@ const AddSubstract = ({
     setCounter((prev) => {
       const newCount = prev === 0 ? 0 : prev - 1;
       onSubstract(newCount);
+      if (
+        cartItems[cartItems.findIndex((item) => item.id === product.id)]
+          .quantity === 1
+      ) {
+        removeFromCart(product);
+      } else {
+        decrease(product);
+      }
       return newCount;
     });
   };
@@ -54,6 +78,7 @@ const AddSubstract = ({
           />
         </div>
       </div>
+      <p>Cart Items: {itemCount}</p>
     </div>
   );
 };
