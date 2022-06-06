@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import React from 'react';
 
-import FilterSortby from '../components/FilterSortby/FilterSortby';
+import FilterSortby from '../components/Filters/FilterSortby';
 
 export default {
   title: 'Component/FilterSortby',
