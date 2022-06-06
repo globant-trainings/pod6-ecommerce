@@ -30,7 +30,7 @@ const AddSubstract = ({
     setCounter((prev) => {
       const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
-      if (cartItems.length > 0) {
+      if (cartItems.find((item) => item.id === product.id)) {
         increase(product);
       } else {
         addToCart(product);

@@ -25,8 +25,8 @@ const onSubstract = (newCount) => {
 };
 
 const product = {
-  id: 1,
-  name: "Coffee Machine 1",
+  id: 2,
+  name: "Coffee Machine 2",
   price: 919.11,
   quantity: 1,
   image: "/assets/img/1.png",
