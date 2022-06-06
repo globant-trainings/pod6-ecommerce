@@ -1,0 +1,8 @@
+.navbar__container {
+    display: flex;
+    min-width: 100vh;
+    background: #3498DB;
+    color: white;
+    padding: 16px;
+    justify-content: space-between;
+}
