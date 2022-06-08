@@ -1,6 +1,7 @@
 import React from "react";
 import CheckoutList from "../checkoutList/CheckoutList";
 import CartContext from "../../store/cart/CartContext";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Button from "../Button/Button";
 import "./checkout.css";
@@ -15,7 +16,9 @@ const Checkout = () => {
           Subtotal: <b>${total}</b>
         </p>
       </div>
-      <Button variant={"primary"} children={"Proceed to Payment"} />
+      <Link to="/checkout">
+        <Button variant={"primary"} children={"Proceed to Payment"} />
+      </Link>
     </div>
   );
 };
