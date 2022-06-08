@@ -5,3 +5,11 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+.product__image{
+    height: 70px;
+}
+
+.product__quantity{
+    color: grey;
+}

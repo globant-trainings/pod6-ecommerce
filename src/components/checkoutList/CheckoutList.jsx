@@ -16,10 +16,14 @@ const CheckoutList = () => {
       {cartItems.map((product) => {
         return (
           <div className="row__checkout" key={product.id}>
-            <img alt="coffee" src={require("../../assets/coffee.png")} />
+            <img
+              className="product__image"
+              alt="coffee"
+              src={require("../../assets/coffee.png")}
+            />
             <p>{product.name}</p>
+            <p className="product__quantity">x{product.quantity}</p>
             <p>${product.price}</p>
-            <p>x{product.quantity}</p>
             <img onClick={() => remove(product)} alt="trash" src={trash} />
           </div>
         );

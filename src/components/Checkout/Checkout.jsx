@@ -10,12 +10,12 @@ const Checkout = () => {
   return (
     <div>
       <CheckoutList />
-      <Button variant={"primary"} children={"Proceed to Payment"} />
       <div className="subtotal__container">
         <p>
           Subtotal: <b>${total}</b>
         </p>
       </div>
+      <Button variant={"primary"} children={"Proceed to Payment"} />
     </div>
   );
 };

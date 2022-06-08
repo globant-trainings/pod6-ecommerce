@@ -11,7 +11,7 @@ const Modal = () => {
     <div className={modal ? "modal__show" : "modal__hidden"}>
       <div className="modal">
         <div className="modal__title__container">
-          <p className="modal__title">Cart</p>
+          <h2 className="modal__title">Cart</h2>
           <div
             className="container__close"
             onClick={() => modalVisibility(false)}

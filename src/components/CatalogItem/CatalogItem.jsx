@@ -31,7 +31,7 @@ const CatalogItem = ({ product, rating, initialItems }) => {
       <Carousel imageData={product.images}></Carousel>
       <p className="title-wrapper">{product.name}</p>
       <div className="rating-comments-wrapper">
-        <Rating rating={rating}></Rating>
+        <Rating rating={product.rating}></Rating>
         <div className="comments-wrapper">
           <Comments numberOfComments={product.comments}></Comments>
         </div>

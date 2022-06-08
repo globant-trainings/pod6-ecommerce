@@ -63,14 +63,15 @@ const CartReducer = (state, action) => {
         cartItems: newCartItems,
       };
     case DECREASE:
-      state.cartItems[
-        state.cartItems.findIndex((item) => item.id === action.payload.id)
-      ].quantity--;
-      console.log(state);
+      const decreaseCartItems = state.cartItems.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      );
       return {
         ...state,
-        ...sumItems(state.cartItems),
-        cartItems: [...state.cartItems],
+        ...sumItems(decreaseCartItems),
+        cartItems: decreaseCartItems,
       };
     case CHECKOUT:
       return {
@@ -86,6 +87,7 @@ const CartReducer = (state, action) => {
     case MODAL_VISIBILITY:
       return {
         ...state,
+        ...sumItems(state.cartItems),
         modal: action.payload,
       };
     default:

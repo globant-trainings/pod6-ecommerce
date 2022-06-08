@@ -7,6 +7,7 @@ export const products = [
     price: 49.0,
     quantity: 1,
     comments: 1,
+    rating: 4,
     basic: true,
     images: [
       {
@@ -26,7 +27,8 @@ export const products = [
     name: "Coffee Machine 2",
     price: 99.99,
     quantity: 1,
-    comments: 2,
+    comments: 3,
+    rating: 3,
     basic: false,
     images: [
       {
@@ -47,6 +49,7 @@ export const products = [
     price: 184.43,
     quantity: 1,
     comments: 2,
+    rating: 4,
     basic: true,
     images: [
       {
@@ -67,6 +70,7 @@ export const products = [
     price: 41.41,
     quantity: 1,
     comments: 2,
+    rating: 2,
     basic: false,
     images: [
       {
