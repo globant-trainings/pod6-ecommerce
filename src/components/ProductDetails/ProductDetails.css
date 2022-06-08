@@ -13,6 +13,9 @@
 }
 .productDetailsContainer{
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px;
+  margin-top: 56px;
 }
 .productDetailsContainer--rightSide__description>p:first-child{
   max-width: 379px;

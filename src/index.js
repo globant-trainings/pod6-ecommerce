@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import CheckoutPage from "./pages/CheckoutPage";
 import SuccessPage from "./pages/SuccessPage"
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartState from "./store/cart/CartState";
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" exact element={<App />} />
         <Route path="/checkout" exact element={<CheckoutPage/>} />
         <Route path="/checkout/success" exact element={<SuccessPage/>} />
+        <Route path="/product-details" exact element={<ProductDetailsPage/>} />
       </Routes>
     </CartState>
   </BrowserRouter>
