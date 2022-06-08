@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterSidebar from "../components/Filters/FilterSidebar";
 import Navbar from "../components/Navbar/Navbar";
 import CatalogItem from "../components/CatalogItem/CatalogItem";
-import { api } from "../utils/constants";
 import Modal from "../components/Modal/Modal";
 import CartContext from "../store/cart/CartContext";
 import { useContext } from "react";
+import { products, prices, options } from "./data";
 import "./mainPage.css";
 
 const MainPage = () => {
   const { modal } = useContext(CartContext);
+  const [filters, setFilters] = useState("none");
+
   const handlePriceChange = (x) => {
     console.log(x);
   };
@@ -17,60 +19,12 @@ const MainPage = () => {
     console.log(x);
   };
   const handleBasics = (x) => {
-    console.log(x);
+    if (x) {
+      setFilters("basics");
+    } else {
+      setFilters("none");
+    }
   };
-
-  const prices = ["$1 - $50", "$51 - $100", "$101 - $200"];
-  const options = ["Relevant", "Price", "Rating"];
-  const products = [
-    {
-      id: "xYerUi",
-      name: "Coffee Machine 1",
-      price: 919.11,
-      quantity: 1,
-      comments: 1,
-      basic: true,
-      image: "/assets/img/1.png",
-    },
-    {
-      id: "mXxTbb",
-      name: "Coffee Machine 2",
-      price: 919.11,
-      quantity: 1,
-      comments: 2,
-      basic: false,
-      image: "/assets/img/1.png",
-    },
-    {
-      id: "c6xueB",
-      name: "Coffee Machine 3",
-      price: 919.11,
-      quantity: 1,
-      comments: 2,
-      basic: true,
-      image: "/assets/img/1.png",
-    },
-    {
-      id: "c1tbl6",
-      name: "Coffee Machine 4",
-      price: 919.11,
-      quantity: 1,
-      comments: 2,
-      basic: false,
-      image: "/assets/img/1.png",
-    },
-  ];
-  const ImageData = [
-    {
-      image: api + "200/300",
-    },
-    {
-      image: api + "200/300?v=1",
-    },
-    {
-      image: api + "200/300?v=2",
-    },
-  ];
 
   return (
     <div>
@@ -79,8 +33,8 @@ const MainPage = () => {
       <div className="row__MainPage">
         <div className="col__MainPage__20">
           <FilterSidebar
-            onChangePrice={() => handlePriceChange()}
-            onChangeSort={() => handleSortChange()}
+            onChangePrice={(x) => handlePriceChange(x)}
+            onChangeSort={(x) => handleSortChange(x)}
             onChangeBasics={(x) => handleBasics(x)}
             prices={prices}
             options={options}
@@ -89,13 +43,16 @@ const MainPage = () => {
         <div className="col__MainPage__80">
           <h2 className="products__title">Products</h2>
           <div className="catalog__grid">
-            {products.map((product) => (
-              <CatalogItem
-                imageData={ImageData}
-                key={product.id}
-                product={product}
-              />
-            ))}
+            {products.map((product) => {
+              if (filters === "basics") {
+                return product.basic ? (
+                  <CatalogItem key={product.id} product={product} />
+                ) : (
+                  ""
+                );
+              }
+              return <CatalogItem key={product.id} product={product} />;
+            })}
           </div>
         </div>
       </div>

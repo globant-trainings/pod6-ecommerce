@@ -84,7 +84,6 @@ const CartReducer = (state, action) => {
         ...sumItems([]),
       };
     case MODAL_VISIBILITY:
-      console.log("modal");
       return {
         ...state,
         modal: action.payload,

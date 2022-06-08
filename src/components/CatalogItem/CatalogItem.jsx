@@ -8,7 +8,7 @@ import Rating from "../Rating/Rating";
 
 import "./catalogitem.css";
 
-const CatalogItem = ({ product, imageData, rating, initialItems }) => {
+const CatalogItem = ({ product, rating, initialItems }) => {
   const handleOnAdd = (e) => {
     console.log(e);
   };
@@ -28,7 +28,7 @@ const CatalogItem = ({ product, imageData, rating, initialItems }) => {
       ) : (
         ""
       )}
-      <Carousel imageData={imageData}></Carousel>
+      <Carousel imageData={product.images}></Carousel>
       <p className="title-wrapper">{product.name}</p>
       <div className="rating-comments-wrapper">
         <Rating rating={rating}></Rating>
