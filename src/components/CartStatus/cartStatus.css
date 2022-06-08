@@ -1,0 +1,29 @@
+.container__cartStatus{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container__status{
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-left: -16px;
+}
+
+.cart__image{
+    height: 38px;
+}
+
+.cart__text{
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.container__counter{
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+}

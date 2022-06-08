@@ -1,0 +1,13 @@
+.radio-option{
+    text-align: left;
+}
+
+.prices__title{
+    text-align: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.radio-option>td{
+    padding-bottom: 4px;
+}

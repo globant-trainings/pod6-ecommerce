@@ -1,0 +1,24 @@
+.display-block {
+    display: block;
+}
+
+.right-side-wrapper {
+    margin-left: 50px;
+}
+
+.input-text-wrapper-right {
+    float: left;
+    margin-right: 20px;
+}
+
+.input-text-wrapper {
+    float: left;
+}
+
+.shipping-wrapper {
+    display: flex;
+}
+
+.error-message {
+    color: red;
+}

@@ -1,0 +1,30 @@
+.carousel{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+}
+
+.carousel__image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.carousel__leftButton {
+    position: absolute;
+    top: 45%;
+    left: 10px;
+}
+
+.carousel__rightButton {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+}
+
+.carousel__div{
+    width: 100%;
+}

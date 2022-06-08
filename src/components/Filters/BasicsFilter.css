@@ -1,20 +1,29 @@
-.basicsFilterCheckbox{
-  display: flex;
-  align-items: center;
+.basicsFilterCheckbox {
+    display: flex;
+    align-items: center;
 }
-.basicsFilterContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
+.basicsFilterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.basicsFilterCheckbox>input{
-  margin-right: 13px;
+
+.filters__title{
+    font-weight: 600;
 }
-.basicsFilterContainer>p ,.basicsFilterCheckbox>p{
-  font-size: 18px;
-  color: #000000;
-  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+
+.basicsFilterCheckbox>input {
+    margin-right: 13px;
 }
-.basicsFilterContainer>p{
-  margin-bottom: 12px;
+
+.basicsFilterContainer>p,
+.basicsFilterCheckbox>p {
+    font-size: 18px;
+    color: #000000;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.basicsFilterContainer>p {
+    margin-bottom: 12px;
 }
