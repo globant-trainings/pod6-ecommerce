@@ -4,6 +4,8 @@ export const products = [
     name: "Coffee Machine 1",
     price: 919.11,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/1.png",
   },
   {
@@ -11,6 +13,8 @@ export const products = [
     name: "Coffee Machine 2",
     price: 1257.92,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/2.png",
   },
   {
@@ -18,6 +22,8 @@ export const products = [
     name: "Coffee Machine 3",
     price: 1500.85,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/3.png",
   },
   {
@@ -25,6 +31,8 @@ export const products = [
     name: "Coffee Machine 4",
     price: 1250.9,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/4.png",
   },
   {
@@ -32,6 +40,8 @@ export const products = [
     name: "Coffee Machine 5",
     price: 1750.85,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/5.png",
   },
   {
@@ -39,6 +49,8 @@ export const products = [
     name: "Coffee Machine 6",
     price: 3100.61,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/6.png",
   },
   {
@@ -46,6 +58,8 @@ export const products = [
     name: "Coffee Machine 7",
     price: 1801.1,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/7.png",
   },
   {
@@ -53,6 +67,8 @@ export const products = [
     name: "Coffee Machine 8",
     price: 1199.99,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/8.png",
   },
   {
@@ -60,6 +76,8 @@ export const products = [
     name: "Coffee Machine 9",
     price: 2395.16,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/9.png",
   },
   {
@@ -67,6 +85,8 @@ export const products = [
     name: "Coffee Machine 10",
     price: 1243.82,
     quantity: 1,
+    comments: 2,
+    basic: false,
     image: "/assets/img/10.png",
   },
 ];

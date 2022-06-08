@@ -6,14 +6,18 @@ import { useContext } from "react";
 import "./cartStatus.css";
 
 const CartStatus = () => {
-  const { itemCount } = useContext(CartContext);
+  const { itemCount, modalVisibility } = useContext(CartContext);
   return (
-    <div className="container__cartStatus">
-      <img src={cart} alt="cart" />
+    <div
+      onClick={() => modalVisibility(true)}
+      className="container__cartStatus"
+    >
+      <img className="cart__image" src={cart} alt="cart" />
       <div className="container__status">
         <img src={circle} alt="circle" />
         <p className="container__counter">{itemCount}</p>
       </div>
+      <p className="cart__text">Cart</p>
     </div>
   );
 };

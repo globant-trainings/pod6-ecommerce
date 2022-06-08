@@ -14,6 +14,7 @@
 
 .modal__close{
     margin-left: auto;
+    cursor: pointer;
 }
 
 .modal__hidden{

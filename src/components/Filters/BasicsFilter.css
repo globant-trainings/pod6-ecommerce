@@ -9,6 +9,10 @@
     align-items: flex-start;
 }
 
+.filters__title{
+    font-weight: 600;
+}
+
 .basicsFilterCheckbox>input {
     margin-right: 13px;
 }

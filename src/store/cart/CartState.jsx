@@ -12,7 +12,7 @@ const CartState = ({ children }) => {
   const initialState = {
     cartItems: storage,
     ...sumItems(storage),
-    modal: true,
+    modal: false,
     checkout: false,
   };
 
@@ -27,7 +27,6 @@ const CartState = ({ children }) => {
   };
 
   const increase = (payload) => {
-    console.log("increase");
     dispatch({ type: "INCREASE", payload });
   };
 

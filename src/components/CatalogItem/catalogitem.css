@@ -6,11 +6,33 @@
     margin-top: 10px;
 }
 .title-wrapper{
-    margin-bottom: -5px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+    text-align: left;
+    font-weight: 500;
 }
+
+.catalogItem__container{
+  padding-top: 34px;
+}
+
+.basic__container{
+    background: #11D000;
+    color: white;
+    width: fit-content;
+    padding: 2px 4px;
+    height: 22px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
 .price-wrapper{
     margin-top: 0px;
+    text-align: left;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 .button-wrapper{
     max-width: 300px;
+    margin-bottom: 4px;
 }

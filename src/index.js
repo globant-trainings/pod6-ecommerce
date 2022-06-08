@@ -8,15 +8,13 @@ import CartState from "./store/cart/CartState";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <CartState>
-        <Routes>
-          <Route path="/" exact element={<App />} />
-        </Routes>
-      </CartState>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <CartState>
+      <Routes>
+        <Route path="/" exact element={<App />} />
+      </Routes>
+    </CartState>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

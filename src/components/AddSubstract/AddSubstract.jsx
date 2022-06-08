@@ -6,7 +6,6 @@ import { useContext } from "react";
 import "./addSubstract.css";
 
 const AddSubstract = ({
-  initialCount,
   limitCount,
   variant,
   size,
@@ -16,25 +15,20 @@ const AddSubstract = ({
   product,
   ...props
 }) => {
-  const [counter, setCounter] = useState(initialCount);
-  const {
-    addToCart,
-    increase,
-    cartItems,
-    itemCount,
-    decrease,
-    removeFromCart,
-  } = useContext(CartContext);
+  const [counter, setCounter] = useState(0);
+  const { addToCart, increase, cartItems, decrease, removeFromCart } =
+    useContext(CartContext);
 
   const handleAdd = () => {
+    if (cartItems.find((item) => item.id === product.id)) {
+      console.log("increase");
+      increase(product);
+    } else {
+      addToCart(product);
+    }
     setCounter((prev) => {
       const newCount = prev < limitCount ? prev + 1 : prev;
       onAdd(newCount);
-      if (cartItems.find((item) => item.id === product.id)) {
-        increase(product);
-      } else {
-        addToCart(product);
-      }
       return newCount;
     });
   };
@@ -73,12 +67,11 @@ const AddSubstract = ({
           <Button
             variant={"secondary"}
             children={"+"}
-            onClick={handleAdd}
+            onClick={() => handleAdd()}
             disabled={counter === limitCount ? true : false}
           />
         </div>
       </div>
-      <p>Cart Items: {itemCount}</p>
     </div>
   );
 };

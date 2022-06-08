@@ -8,32 +8,35 @@ import Rating from "../Rating/Rating";
 
 import "./catalogitem.css";
 
-const CatalogItem = ({
-  product,
-  imageData,
-  title,
-  comments,
-  rating,
-  price,
-  initialItems,
-}) => {
+const CatalogItem = ({ product, imageData, rating, initialItems }) => {
   const handleOnAdd = (e) => {
     console.log(e);
   };
   const handleOnSubstract = (e) => {
     console.log(e);
   };
+
   return (
-    <div data-testid="catalog-item">
+    <div
+      className={product.basic ? "" : "catalogItem__container"}
+      data-testid="catalog-item"
+    >
+      {product.basic ? (
+        <div className="basic__container">
+          <p>basic</p>
+        </div>
+      ) : (
+        ""
+      )}
       <Carousel imageData={imageData}></Carousel>
-      <p className="title-wrapper">{title}</p>
+      <p className="title-wrapper">{product.name}</p>
       <div className="rating-comments-wrapper">
         <Rating rating={rating}></Rating>
         <div className="comments-wrapper">
-          <Comments numberOfComments={comments}></Comments>
+          <Comments numberOfComments={product.comments}></Comments>
         </div>
       </div>
-      <p className="price-wrapper">{price}</p>
+      <p className="price-wrapper">${product.price}</p>
       <div className="button-wrapper">
         <Button
           variant={"primary"}

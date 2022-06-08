@@ -15,7 +15,7 @@ const CheckoutList = () => {
     <div>
       {cartItems.map((product) => {
         return (
-          <div className="row__checkout">
+          <div className="row__checkout" key={product.id}>
             <img alt="coffee" src={require("../../assets/coffee.png")} />
             <p>{product.name}</p>
             <p>${product.price}</p>

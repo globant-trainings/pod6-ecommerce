@@ -27,7 +27,7 @@ const Carousel = ({ imageData }) => {
       />
       {imageData.length > 0 ? (
         imageData.map((image, index) => (
-          <div className="carousel__div" key="">
+          <div className="carousel__div" key={image.image}>
             {index === currentImage && (
               <img
                 className="carousel__image"
