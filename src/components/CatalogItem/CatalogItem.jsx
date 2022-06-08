@@ -5,10 +5,11 @@ import Button from "../Button/Button";
 import Carousel from "../Carousel/Carousel";
 import Comments from "../Comments/Comments";
 import Rating from "../Rating/Rating";
-
+import { useNavigate } from "react-router-dom";
 import "./catalogitem.css";
 
 const CatalogItem = ({ product, rating, initialItems }) => {
+  const navigate = useNavigate();
   const handleOnAdd = (e) => {
     console.log(e);
   };
@@ -42,6 +43,7 @@ const CatalogItem = ({ product, rating, initialItems }) => {
           variant={"primary"}
           size={"large"}
           children={"See details"}
+          onClick={() => navigate('/product-details', { state: { imageData: product.images, price: product.price, comments: product.comments, rating: product.rating, isBasic: product.basic, productName: product.name, product } })}
         ></Button>
       </div>
       <div className="button-wrapper">

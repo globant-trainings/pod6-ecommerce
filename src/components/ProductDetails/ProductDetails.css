@@ -1,0 +1,84 @@
+
+.productDetailsContainer--rightSide__ratingAndComments ,.productDetailsContainer--rightSide__price ,.productDetailsContainer{
+  display: flex;
+}
+.productDetailsContainer--rightSide__description{
+  text-align: left;
+}
+.productDetailsContainer--rightSide{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.productDetailsContainer{
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px;
+  margin-top: 56px;
+}
+.productDetailsContainer--rightSide__description>p:first-child{
+  max-width: 379px;
+}
+.productDetailsContainer>img{
+  margin-right: 200px;
+  height: 334px;
+  width: 250px;
+}
+.productDetailsContainer--rightSide>p:first-child{
+  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  color: #0F1111;
+  margin-bottom: 10px;
+}
+.productDetailsContainer--rightSide__ratingAndComments>div:first-child{
+  margin-right: 11px;
+}
+.productDetailsContainer--rightSide__price{
+  align-items: center;
+}
+.productDetailsContainer--rightSide__price>p:first-child{
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-right: 18px;
+  font-size: 36px;
+}
+.productDetailsContainer--rightSide__price>button{
+  width: 120px;
+  height: 100%;
+  background-color:#2ECC71;
+  border: none;
+  color: #FFFFFF;
+}
+.productDetailsContainer--rightSide__price{
+  margin-top: 24px;
+  margin-bottom: 14px;
+  height: 36px;
+}
+.productDetailsContainer--rightSide__description>p:last-child{
+  font-size: 14px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: #2980B9;
+  margin-bottom: 28px;
+}
+.productDetailsContainer--rightSide__description>p:first-child{
+  font-size: 14px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-bottom: 7px;
+}
+.productDetailsContainer--rightSide__addToCart{
+  width: 100%;
+  height: 32px;
+  background-color: #2ECC71;
+  color: #FFFFFF;
+  border: 1px solid black;
+}
+.productDetailsContainer{
+  background-color: #FFFFFF;
+  padding: 30px;
+}
+.productDetailsContainer--rightSide__ratingAndComments>p:first-child{
+  color: #000000;
+  margin-right: 11px;
+}
