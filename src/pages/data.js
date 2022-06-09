@@ -87,5 +87,9 @@ export const products = [
   },
 ];
 
-export const prices = ["$1 - $50", "$51 - $100", "$101 - $200"];
+export const prices = [
+  { label: "$1 - $50", value: [1, 50] },
+  { label: "$51 - $100", value: [51, 100] },
+  { label: "$101 - $200", value: [101, 200] },
+];
 export const options = ["Relevant", "Price", "Rating"];

@@ -16,14 +16,15 @@ const FilterPrices = ({ prices, onChange }) => {
             return (
               <tr key={index} className="radio-option">
                 <td>
+                  {console.log(price.value)}
                   <input
                     data-testid={"prices-radio-" + index}
                     type="radio"
                     name="prices"
-                    value={price}
+                    value={price.value}
                     onChange={handleChange}
                   ></input>
-                  {price}
+                  {price.label}
                 </td>
               </tr>
             );

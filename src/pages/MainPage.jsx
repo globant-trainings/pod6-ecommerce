@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 import FilterSidebar from "../components/Filters/FilterSidebar";
 import Navbar from "../components/Navbar/Navbar";
 import CatalogItem from "../components/CatalogItem/CatalogItem";
@@ -10,21 +11,84 @@ import "./mainPage.css";
 
 const MainPage = () => {
   const { modal } = useContext(CartContext);
-  const [filters, setFilters] = useState("none");
+  const [initialState, setInitialState] = useState([]);
+  const [productArray, setProductArray] = useState([]);
+  const initialFilter = [{ basic: false, price: [], sortBy: "Relevant" }];
+  const [filters, setFilters] = useState([]);
 
-  const handlePriceChange = (x) => {
-    console.log(x);
+  const handlePriceChange = (payload) => {
+    console.log(payload);
+    const prevObject = [...filters];
+    prevObject[0]["price"] = payload;
+    changeFilters(prevObject);
   };
-  const handleSortChange = (x) => {
-    console.log(x);
+
+  const handleSortChange = (payload) => {
+    const prevObject = [...filters];
+    prevObject[0]["sortBy"] = payload;
+    changeFilters(prevObject);
   };
-  const handleBasics = (x) => {
-    if (x) {
-      setFilters("basics");
+
+  const handleBasics = (payload) => {
+    const prevObject = [...filters];
+    prevObject[0].basic = payload;
+    changeFilters(prevObject);
+  };
+
+  const filterBasics = (x, newState) => {
+    const filteredBasicArray =
+      x === true
+        ? newState.filter((product) => product.basic === true)
+        : newState;
+    return filteredBasicArray;
+  };
+
+  const filterPrice = (x, newState) => {
+    if (x.length > 0) {
+      const filteredPriceArray = initialState.filter((product) => {
+        return (
+          product.price >= filters.price[0] && product.price <= filters.price[1]
+        );
+      });
+      return filteredPriceArray;
     } else {
-      setFilters("none");
+      return newState;
     }
   };
+
+  const filterSortBy = (x, newState) => {
+    switch (x) {
+      case "Relevant":
+        return newState.sort((a, b) => b.comments - a.comments);
+      case "Price":
+        return newState.sort((a, b) => b.price - a.price);
+      case "Rating":
+        return newState.sort((a, b) => b.rating - a.rating);
+      default:
+        break;
+    }
+  };
+
+  const changeFilters = (newFilter) => {
+    let newState = [...initialState];
+    newState = filterBasics(newFilter[0]["basic"], newState);
+    newState = filterPrice(newFilter[0]["price"], newState);
+    newState = filterSortBy(newFilter[0]["sortBy"], newState);
+    setFilters(newFilter);
+    setProductArray(newState);
+  };
+
+  useEffect(() => {
+    setInitialState(products);
+    setProductArray(products);
+    setFilters(initialFilter);
+  }, []);
+
+  useEffect(() => {
+    if (filters.length > 0) {
+      changeFilters(filters);
+    }
+  }, [filters]);
 
   return (
     <div>
@@ -43,16 +107,9 @@ const MainPage = () => {
         <div className="col__MainPage__80">
           <h2 className="products__title">Products</h2>
           <div className="catalog__grid">
-            {products.map((product) => {
-              if (filters === "basics") {
-                return product.basic ? (
-                  <CatalogItem key={product.id} product={product} />
-                ) : (
-                  ""
-                );
-              }
-              return <CatalogItem key={product.id} product={product} />;
-            })}
+            {productArray.map((product) => (
+              <CatalogItem key={product.id} product={product} />
+            ))}
           </div>
         </div>
       </div>
