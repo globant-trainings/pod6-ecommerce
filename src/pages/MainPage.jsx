@@ -45,9 +45,11 @@ const MainPage = () => {
 
   const filterPrice = (x, newState) => {
     if (x.length > 0) {
-      const filteredPriceArray = initialState.filter((product) => {
+      const splitArray = x.split(",");
+      const filteredPriceArray = newState.filter((product) => {
         return (
-          product.price >= filters.price[0] && product.price <= filters.price[1]
+          product.price >= parseInt(splitArray[0]) &&
+          product.price <= parseInt(splitArray[1])
         );
       });
       return filteredPriceArray;
